@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Dashboard') - {{ env('APP_NAME') }}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('template/mazer/compiled/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/mazer/compiled/css/app-dark.css') }}">
+    {{-- Section untuk style tambahan --}}
+    @stack('styles')
+    @livewireStyles
+</head>
+<body>
+    <script src="{{ asset('template/mazer/static/js/initTheme.js') }}"></script>
+    <div id="app">
+        
+        @include('layouts.sidebar')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <div id="main">
+            @include('layouts.header')
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+            <div id="main-content">
+                @yield('content')
+            </div>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased">
-        <x-banner />
-
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            @include('layouts.footer')
         </div>
+    </div>
 
-        @stack('modals')
-
-        @livewireScripts
-    </body>
+    <script src="{{ asset('template/mazer/static/js/components/dark.js') }}"></script>
+    <script src="{{ asset('template/mazer/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('template/mazer/compiled/js/app.js') }}"></script>
+    {{-- Section untuk script tambahan --}}
+    @stack('scripts')
+    @stack('modals')
+    @livewireScripts
+</body>
 </html>
