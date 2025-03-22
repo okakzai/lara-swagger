@@ -1,0 +1,45 @@
+TUTORIAL
+- https://teknologiumum.com/posts/dokumentasi-api-swagger-laravel
+- https://chatgpt.com/c/67deebf1-faf8-8010-9d04-5f127f3bec90
+
+TEKNOLOGI
+- PHP 8.2.12
+- Laravel 10.48.28
+- MariaDB 10.4.32 
+- Node.js 21.7.3
+- Jetstream 4.3.1 (Livewire 3.5.20 + Tailwind CSS 3.1.0)
+
+DEVELOPMENT
+1. Terminal: composer create-project --prefer-dist laravel/laravel lara-swagger "10.*"
+2. Terminal: cd lara-swagger
+3. Terminal: composer require darkaonline/l5-swagger
+4. Terminal: php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+5. Terminal: php artisan make:controller API/KategoriBeritaController
+6. VSCode: Edit file 'KategoriBeritaController.php' di folder 'app/Http/Controllers/API'
+7. VSCode: Edit file 'Controller.php' di folder 'app/Http/Controllers'
+8. PHPMyAdmin: Buat tabel 'lara-swagger'
+9. VSCode: Edit file '.env'
+10. VSCode: Buat file 'ApiKey.php' di folder 'app/Models'
+11. VSCode: Buat file 'ApiKeyMiddleware' di folder 'app/Http/Middleware'
+12. VSCode: Buat file 'ApiKeyController.php' di folder 'app/Http/Controllers/API'
+13. VSCode: Edit file 'Kernel.php' di folder 'app/Http'
+14. VSCode: Edit file 'api.php' di folder 'routes'
+15. Terminal: php artisan make:migration create_api_keys_table
+16. VSCode: Edit file 'yyyy_mm_hh_******_create_api_keys_table.php' di folder 'database/migrations'
+17. Terminal: php artisan migrate
+18. Terminal: composer require laravel/jetstream
+19. Terminal: php artisan jetstream:install livewire
+20. Terminal: php artisan migrate
+21. Terminal: php artisan l5-swagger:generate
+22. Terminal: php artisan serve
+23. Terminal: git init
+24. Terminal: git add .
+25. Terminal: git commit -m "Pertamaz"
+26. Terminal: git branch -M main
+27. Terminal: git remote add origin https://github.com/okakzai/lara-swagger.git
+28. Terminal: git pull origin main --rebase
+29. Terminal: git push -u origin main
+
+MENGHAPUS CACHE
+php artisan optimize:clear
+php artisan config:cache
