@@ -34,6 +34,7 @@ Route::middleware([
 
     Route::get('/api-key', [ApiKeyController::class, 'getKey']);
     Route::post('/api-key', [ApiKeyController::class, 'generateKey']);
+    Route::get('/api-documentation', [ApiKeyController::class, 'getDoc']);
 
     Route::get('/component/accordion', function () {
         return view('mazer/component/accordion',[

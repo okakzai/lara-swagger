@@ -32,6 +32,16 @@ class ApiKeyController extends Controller
             'api_key' => $api_key
         ]);
     }
+    public function getDoc(Request $request)
+    {
+        return view('api-documentation',[
+            'title' => 'API Documentation',
+            'description' => 'Dokumentasi Merchant API',
+            'menu' => 'merchant-api',
+            'submenu' => false
+        ]);
+    }
+
     public function generateKey(Request $request)
     {
         $user = Auth::user();
