@@ -5,33 +5,32 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class KategoriBeritaController extends Controller
+class SaldoController extends Controller
 {
         /**
     *    @OA\Get(
-    *       path="/kategori-berita",
-    *       tags={"Berita"},
-    *       operationId="kategoriBerita",
-    *       summary="Kategori Berita",
-    *       description="Mengambil Data Kategori Berita",
+    *       path="/saldo",
+    *       tags={"Saldo"},
+    *       operationId="saldo",
+    *       summary="Saldo Merchant",
+    *       description="Mengambil Data Saldo Merchant",
     *       @OA\Response(
     *           response="200",
     *           description="Ok",
     *           @OA\JsonContent
     *           (example={
     *               "success": true,
-    *               "message": "Berhasil mengambil Kategori Berita",
+    *               "message": "Berhasil mengambil Saldo Merchant",
     *               "data": {
     *                   {
-    *                   "id": "1",
-    *                   "nama_kategori": "Pendidikan",
+    *                   "saldo": "50000",
     *                  }
     *              }
     *          }),
     *      ),
     *  )
     */
-    public function listKategoriBerita() {
+    public function info() {
         return 'true';
     }
 

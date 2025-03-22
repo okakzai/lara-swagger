@@ -19,14 +19,14 @@
         }
     ],
     "paths": {
-        "/kategori-berita": {
+        "/saldo": {
             "get": {
                 "tags": [
-                    "Berita"
+                    "Saldo"
                 ],
-                "summary": "Kategori Berita",
-                "description": "Mengambil Data Kategori Berita",
-                "operationId": "kategoriBerita",
+                "summary": "Saldo Merchant",
+                "description": "Mengambil Data Saldo Merchant",
+                "operationId": "saldo",
                 "responses": {
                     "200": {
                         "description": "Ok",
@@ -35,11 +35,10 @@
                                 "schema": {},
                                 "example": {
                                     "success": true,
-                                    "message": "Berhasil mengambil Kategori Berita",
+                                    "message": "Berhasil mengambil Saldo Merchant",
                                     "data": [
                                         {
-                                            "id": "1",
-                                            "nama_kategori": "Pendidikan"
+                                            "saldo": "50000"
                                         }
                                     ]
                                 }

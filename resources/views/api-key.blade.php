@@ -32,12 +32,12 @@
                                 @csrf
                                 <div class="row">
                                     <div class="input-group mb-3">
-                                        <input id="copyInput" readonly value="{{ $api_key }}" type="text" name="api_key" class="form-control" placeholder="API Key" aria-label="API Key" aria-describedby="button-addon2">
+                                        <input id="copyInput" readonly value="{{ isset($api_key) ? $api_key : 'API Key' }}" type="text" name="api_key" class="form-control" placeholder="API Key" aria-label="API Key" aria-describedby="button-addon2">
                                         <button id="copyButton" class="btn btn-outline-secondary" type="button" id="button-addon2">Copy</button>
                                     </div>
 
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Generate</button>
                                     </div>
                                 </div>
                             </form>

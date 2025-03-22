@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\KategoriBeritaController;
+use App\Http\Controllers\API\SaldoController;
 use App\Http\Controllers\API\ApiKeyController;
 
 /*
@@ -29,5 +29,5 @@ Route::group(['prefix' => 'v1', 'middleware' => [
 });
 
 Route::group(['prefix' => 'v1', 'middleware' => ['api.key']], function () {
-    Route::get('/kategori-berita', [KategoriBeritaController::class, 'listKategoriBerita']);
+    Route::get('/saldo', [SaldoController::class, 'info']);
 });

@@ -32,15 +32,8 @@ Route::middleware([
         ]);
     });
 
+    Route::get('/api-key', [ApiKeyController::class, 'getKey']);
     Route::post('/api-key', [ApiKeyController::class, 'generateKey']);
-    Route::get('/api-key', function () {
-        return view('api-key',[
-            'title' => 'API Key',
-            'description' => 'Generate API Key',
-            'menu' => 'merchant-api',
-            'submenu' => false,
-        ]);
-    });
 
     Route::get('/component/accordion', function () {
         return view('mazer/component/accordion',[
