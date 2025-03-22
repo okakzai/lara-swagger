@@ -29,5 +29,5 @@ Route::group(['prefix' => 'v1', 'middleware' => [
 });
 
 Route::group(['prefix' => 'v1', 'middleware' => ['api.key']], function () {
-    Route::get('kategori-berita', [KategoriBeritaController::class, 'listKategoriBerita']);
+    Route::get('/kategori-berita', [KategoriBeritaController::class, 'listKategoriBerita']);
 });

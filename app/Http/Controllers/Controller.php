@@ -11,9 +11,9 @@
  * @OA\Info(
  *      version="1.0.0",
  *      title="Dokumentasi API",
- *      description="Lorem Ipsum",
+ *      description="Merchant",
  *      @OA\Contact(
- *          email="hi.wasissubekti02@gmail.com"
+ *          email="majuappz@gmail.com"
  *      ),
  *      @OA\License(
  *          name="Apache 2.0",
@@ -23,9 +23,10 @@
  *
  * @OA\Server(
  *      url=L5_SWAGGER_CONST_HOST,
- *      description="Demo API Server"
+ *      description="Merchant API"
  * )
  */
+
  class Controller extends BaseController
  {
      use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

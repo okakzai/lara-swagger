@@ -51,6 +51,30 @@
                     
 
                 </li>
+
+                <li
+                    class="sidebar-item has-sub {{ ($menu ?? '') == 'merchant-api' ? 'active' : '' }}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-gear"></i>
+                        <span>Merchant API</span>
+                    </a>
+                    
+                    <ul class="submenu {{ ($submenu ?? '') == true ? 'active' : '' }}">
+                        
+                        <li class="submenu-item {{ ($title ?? '') == 'API Key' ? 'active' : '' }}">
+                            <a href="{{ url('/api-key') }}" class="submenu-link">API Key</a>
+                            
+                        </li>
+                        
+                        <li class="submenu-item {{ ($title ?? '') == 'API Documentation' ? 'active' : '' }}">
+                            <a href="{{ url('/api-documentation') }}" class="submenu-link">API Documentation</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+
+                </li>
                 
                 <li
                     class="sidebar-item has-sub {{ ($menu ?? '') == 'component' ? 'active' : '' }}">

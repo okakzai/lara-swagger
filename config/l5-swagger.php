@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'Dokumentasi API Merchant Kiostunai.com',
+                'title' => 'Dokumentasi Merchant API',
             ],
 
             'routes' => [

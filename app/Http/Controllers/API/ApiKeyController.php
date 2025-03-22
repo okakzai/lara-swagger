@@ -9,20 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ApiKeyController extends Controller
 {
-    /**
-     * @OA\Post(
-     *     path="/generate-api-key",
-     *     tags={"API Key"},
-     *     summary="Generate API Key",
-     *     @OA\Response(
-     *         response=200,
-     *         description="Generated API Key",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="api_key", type="string")
-     *         )
-     *     )
-     * )
-     */
     public function generateKey(Request $request)
     {
         $user = Auth::user();
@@ -32,8 +18,7 @@ class ApiKeyController extends Controller
         }
         
         $userId = $user->id;
-        // $userId = 1;
-
+        
         $apiKey = bin2hex(random_bytes(16));
         // Cari API key berdasarkan user_id
         $apiKeyRecord = ApiKey::where('user_id', $userId)->first();
@@ -45,6 +30,12 @@ class ApiKeyController extends Controller
             $apiKeyRecord = ApiKey::Create(['key' => $apiKey, 'user_id' => $userId]);
         }
         
-        return response()->json(['api_key' => $apiKeyRecord->key]);
+        return view('api-key',[
+            'title' => 'API Key',
+            'description' => 'Generate API Key',
+            'menu' => 'merchant-api',
+            'submenu' => false,
+            'api_key' => $apiKeyRecord->key
+        ]);
     }
 }

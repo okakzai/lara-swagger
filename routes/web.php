@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\ApiKeyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +23,21 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    
     Route::get('/dashboard', function () {
         return view('dashboard',[
             'title' => 'Dashboard',
             'menu' => false,
+            'submenu' => false,
+        ]);
+    });
+
+    Route::post('/api-key', [ApiKeyController::class, 'generateKey']);
+    Route::get('/api-key', function () {
+        return view('api-key',[
+            'title' => 'API Key',
+            'description' => 'Generate API Key',
+            'menu' => 'merchant-api',
             'submenu' => false,
         ]);
     });

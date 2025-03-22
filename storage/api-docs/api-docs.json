@@ -2,9 +2,9 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Dokumentasi API",
-        "description": "Lorem Ipsum",
+        "description": "Merchant",
         "contact": {
-            "email": "hi.wasissubekti02@gmail.com"
+            "email": "majuappz@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -15,36 +15,10 @@
     "servers": [
         {
             "url": "http://127.0.0.1:8000/api/v1",
-            "description": "Demo API Server"
+            "description": "Merchant API"
         }
     ],
     "paths": {
-        "/generate-api-key": {
-            "post": {
-                "tags": [
-                    "API Key"
-                ],
-                "summary": "Generate API Key",
-                "operationId": "dead528f0d28e6e1b188b43725022522",
-                "responses": {
-                    "200": {
-                        "description": "Generated API Key",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "api_key": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/kategori-berita": {
             "get": {
                 "tags": [
