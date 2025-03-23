@@ -153,6 +153,12 @@ return [
         */
         'securityDefinitions' => [
             'securitySchemes' => [
+                // 'Bearer' => [
+                //     'type' => 'apiKey',
+                //     'description' => 'Masukkan token tanpa kata "Bearer", contoh: 12345abcdef',
+                //     'name' => 'Authorization',
+                //     'in' => 'header',
+                // ],
                 /*
                  * Examples of Security schemes
                 */
@@ -212,6 +218,10 @@ return [
 
                     'passport' => []
                     */
+                    // 'bearerAuth' => [
+                    //     'type' => 'http',
+                    //     'scheme' => 'bearer',
+                    // ]
                 ],
             ],
         ],

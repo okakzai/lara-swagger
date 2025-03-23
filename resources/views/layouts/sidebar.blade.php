@@ -67,7 +67,7 @@
                         </li>
                         
                         <li class="submenu-item {{ ($title ?? '') == 'API Documentation' ? 'active' : '' }}">
-                            <a href="{{ url('/api-documentation') }}" class="submenu-link">API Documentation</a>
+                            <a href="{{ url('/api/documentation') }}" class="submenu-link">API Documentation</a>
                             
                         </li>
                         

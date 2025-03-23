@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\SaldoController;
 use App\Http\Controllers\API\ApiKeyController;
+use App\Http\Controllers\SwaggerController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +18,17 @@ use App\Http\Controllers\API\ApiKeyController;
 |
 */
 
+// Route::middleware(['auth:sanctum'])->group(function () {
+//     Route::get('/documentation', [SwaggerController::class, 'index'])->name('swagger.index')->withoutMiddleware([RedirectIfAuthenticated::class]);
+//     Route::get('/api-docs.json', [SwaggerController::class, 'json'])->name('swagger.json')->withoutMiddleware([RedirectIfAuthenticated::class]);
+// });
+// Route::get('/documentation', [SwaggerController::class, 'index'])->name('swagger.index')->withoutMiddleware([RedirectIfAuthenticated::class]);
+// Route::get('/api-docs.json', [SwaggerController::class, 'json'])->name('swagger.json')->withoutMiddleware([RedirectIfAuthenticated::class]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 
 Route::group(['prefix' => 'v1', 'middleware' => [
     'auth:sanctum',

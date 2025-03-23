@@ -65,6 +65,14 @@ SETTING SPATIE
 47. VSCode: Edit file 'Kernel.php' di folder 'app/Http
 48. VSCode: Edit file 'CreateNewUser.php' di folder 'app/Actions/Fortify''
 
+49. Terminal: php artisan make:controller SwaggerController
+50. VSCode: Edit file 'SwaggerController.php' di folder 'app/Http/Controllers'
+51. Terminal: php artisan config:clear
+52. Terminal: php artisan cache:clear
+53. Terminal: php artisan view:clear
+54. Terminal: php artisan l5-swagger:generate
+
+
 MENGHAPUS CACHE
 php artisan optimize:clear
 php artisan config:cache
