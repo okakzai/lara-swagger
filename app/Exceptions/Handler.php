@@ -32,7 +32,10 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         if($e instanceof UnauthorizedException){
-            return response()->view('mazer.error.403',['exception'=>$e->getMessage()],403);
+            return response()->view('mazer.error.403',[
+                'title' => 'Forbidden',
+                'exception'=>$e->getMessage()
+            ],403);
         }
         return parent::render($request, $e);
     }

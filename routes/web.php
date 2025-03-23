@@ -22,6 +22,17 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
+    'role:merchant'
+])->group(function () {
+    Route::get('/api-key', [ApiKeyController::class, 'getKey']);
+    Route::post('/api-key', [ApiKeyController::class, 'generateKey']);
+    Route::get('/api-documentation', [ApiKeyController::class, 'getDoc']);
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
 ])->group(function () {
     
     Route::get('/dashboard', function () {
@@ -31,10 +42,6 @@ Route::middleware([
             'submenu' => false,
         ]);
     });
-
-    Route::get('/api-key', [ApiKeyController::class, 'getKey']);
-    Route::post('/api-key', [ApiKeyController::class, 'generateKey']);
-    Route::get('/api-documentation', [ApiKeyController::class, 'getDoc']);
 
     Route::get('/component/accordion', function () {
         return view('mazer/component/accordion',[
