@@ -24,8 +24,9 @@ Route::group(['prefix' => 'v1', 'middleware' => [
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
+    'role:merchant'
     ]], function () {
-    Route::post('/generate-api-key', [ApiKeyController::class, 'generateKey']);
+        Route::post('/generate-api-key', [ApiKeyController::class, 'generateKey']);
 });
 
 Route::group(['prefix' => 'v1', 'middleware' => ['api.key']], function () {

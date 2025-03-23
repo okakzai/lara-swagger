@@ -52,16 +52,18 @@ SETTING SPATIE
 34. Terminal: php artisan make:seeder RolePermissionSeeder
 35. VSCode: Edit file 'RolePermissionSeeder.php' di folder 'database/seeders'
 36. Terminal: php artisan make:seeder AdminSeeder
-37. Terminal: php artisan make:seeder MerchantSeeder
-38. Terminal: php artisan make:seeder UserSeeder
-39. VSCode: Edit file 'AdminSeeder.php' di folder 'database/seeders'
-40. VSCode: Edit file 'MerchantSeeder.php' di folder 'database/seeders'
-41. VSCode: Edit file 'UserSeeder.php' di folder 'database/seeders'
-42. VSCode: Edit file 'DatabaseSeeder.php' di folder 'database/seeders'
-43. Terminal: php artisan db:seed
-44. VSCode: Edit file 'Handler.php' di folder 'app/Exceptions'
-45. VSCode: Edit file 'Kernel.php' di folder 'app/Http
-46. VSCode: Edit file 'CreateNewUser.php' di folder 'app/Actions/Fortify''
+37. Terminal: php artisan make:seeder OwnerSeeder
+38. Terminal: php artisan make:seeder MerchantSeeder
+39. Terminal: php artisan make:seeder UserSeeder
+40. VSCode: Edit file 'AdminSeeder.php' di folder 'database/seeders'
+41. VSCode: Edit file 'OwnerSeeder.php' di folder 'database/seeders'
+42. VSCode: Edit file 'MerchantSeeder.php' di folder 'database/seeders'
+43. VSCode: Edit file 'UserSeeder.php' di folder 'database/seeders'
+44. VSCode: Edit file 'DatabaseSeeder.php' di folder 'database/seeders'
+45. Terminal: php artisan db:seed
+46. VSCode: Edit file 'Handler.php' di folder 'app/Exceptions'
+47. VSCode: Edit file 'Kernel.php' di folder 'app/Http
+48. VSCode: Edit file 'CreateNewUser.php' di folder 'app/Actions/Fortify''
 
 MENGHAPUS CACHE
 php artisan optimize:clear

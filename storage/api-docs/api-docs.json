@@ -72,8 +72,8 @@
                             }
                         }
                     },
-                    "401": {
-                        "description": "Unauthorized: API Key tidak valid",
+                    "400": {
+                        "description": "API Key tidak ditemukan.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -84,7 +84,47 @@
                                         },
                                         "message": {
                                             "type": "string",
-                                            "example": "Unauthorized: Invalid API Key."
+                                            "example": "API Key tidak ditemukan."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "API Key tidak valid.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "API Key tidak valid."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Hanya pengguna dengan role merchant yang dapat mengakses.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Hanya pengguna dengan role merchant yang dapat mengakses."
                                         }
                                     },
                                     "type": "object"
