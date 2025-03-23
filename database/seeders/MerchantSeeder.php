@@ -25,6 +25,6 @@ class MerchantSeeder extends Seeder
             'password' => bcrypt('merchant2$'),
             'saldo' => 250700
         ]);
-        $merchantUser1->assignRole('merchant');
+        $merchantUser2->assignRole('merchant');
     }
 }
