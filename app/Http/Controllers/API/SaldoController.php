@@ -40,7 +40,6 @@ class SaldoController extends Controller
      *             @OA\Property(
      *                 property="data",
      *                 type="object",
-     *                 @OA\Property(property="user_id", type="integer", example=1),
      *                 @OA\Property(property="saldo", type="integer", example=1000000)
      *             )
      *         )
