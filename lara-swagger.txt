@@ -9,6 +9,7 @@ TEKNOLOGI
 - Node.js 21.7.3
 - Jetstream 4.3.1 (Livewire 3.5.20 + Tailwind CSS 3.1.0)
 - Mazer 2.3.1 (Bootstrap 5.3.3)
+- Spatie 6.15.0
 
 DEVELOPMENT
 1. Terminal: composer create-project --prefer-dist laravel/laravel lara-swagger "10.*"
@@ -20,6 +21,7 @@ DEVELOPMENT
 7. VSCode: Edit file 'Controller.php' di folder 'app/Http/Controllers'
 8. PHPMyAdmin: Buat tabel 'lara-swagger'
 9. VSCode: Edit file '.env'
+SETTING SWAGGER
 10. VSCode: Buat file 'ApiKey.php' di folder 'app/Models'
 11. VSCode: Buat file 'ApiKeyMiddleware' di folder 'app/Http/Middleware'
 12. VSCode: Buat file 'ApiKeyController.php' di folder 'app/Http/Controllers/API'
@@ -28,11 +30,13 @@ DEVELOPMENT
 15. Terminal: php artisan make:migration create_api_keys_table
 16. VSCode: Edit file 'yyyy_mm_hh_******_create_api_keys_table.php' di folder 'database/migrations'
 17. Terminal: php artisan migrate
-18. Terminal: composer require laravel/jetstream
-19. Terminal: php artisan jetstream:install livewire
-20. Terminal: php artisan migrate
-21. Terminal: php artisan l5-swagger:generate
+18. Terminal: php artisan l5-swagger:generate
+SETTING JETSTREAM
+19. Terminal: composer require laravel/jetstream
+20. Terminal: php artisan jetstream:install livewire
+21. Terminal: php artisan migrate
 22. Terminal: php artisan serve
+SETTING GITHUB
 23. Terminal: git init
 24. Terminal: git add .
 25. Terminal: git commit -m "Pertamaz"
@@ -40,6 +44,24 @@ DEVELOPMENT
 27. Terminal: git remote add origin https://github.com/okakzai/lara-swagger.git
 28. Terminal: git pull origin main --rebase
 29. Terminal: git push -u origin main
+SETTING SPATIE
+30. Terminal: composer require spatie/laravel-permission
+31. Terminal: php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+32. Terminal: php artisan migrate
+33. VSCode: Edit file 'Users.php' di folder 'app/Models'
+34. Terminal: php artisan make:seeder RolePermissionSeeder
+35. VSCode: Edit file 'RolePermissionSeeder.php' di folder 'database/seeders'
+36. Terminal: php artisan make:seeder AdminSeeder
+37. Terminal: php artisan make:seeder MerchantSeeder
+38. Terminal: php artisan make:seeder UserSeeder
+39. VSCode: Edit file 'AdminSeeder.php' di folder 'database/seeders'
+40. VSCode: Edit file 'MerchantSeeder.php' di folder 'database/seeders'
+41. VSCode: Edit file 'UserSeeder.php' di folder 'database/seeders'
+42. VSCode: Edit file 'DatabaseSeeder.php' di folder 'database/seeders'
+43. Terminal: php artisan db:seed
+44. VSCode: Edit file 'Handler.php' di folder 'app/Exceptions'
+45. VSCode: Edit file 'Kernel.php' di folder 'app/Http
+46. VSCode: Edit file 'CreateNewUser.php' di folder 'app/Actions/Fortify''
 
 MENGHAPUS CACHE
 php artisan optimize:clear
