@@ -14,6 +14,7 @@ TEKNOLOGI
 DEVELOPMENT
 1. Terminal: composer create-project --prefer-dist laravel/laravel lara-swagger "10.*"
 2. Terminal: cd lara-swagger
+SETTING SWAGGER
 3. Terminal: composer require darkaonline/l5-swagger
 4. Terminal: php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
 5. Terminal: php artisan make:controller API/KategoriBeritaController
@@ -21,7 +22,6 @@ DEVELOPMENT
 7. VSCode: Edit file 'Controller.php' di folder 'app/Http/Controllers'
 8. PHPMyAdmin: Buat tabel 'lara-swagger'
 9. VSCode: Edit file '.env'
-SETTING SWAGGER
 10. VSCode: Buat file 'ApiKey.php' di folder 'app/Models'
 11. VSCode: Buat file 'ApiKeyMiddleware' di folder 'app/Http/Middleware'
 12. VSCode: Buat file 'ApiKeyController.php' di folder 'app/Http/Controllers/API'
@@ -64,14 +64,12 @@ SETTING SPATIE
 46. VSCode: Edit file 'Handler.php' di folder 'app/Exceptions'
 47. VSCode: Edit file 'Kernel.php' di folder 'app/Http
 48. VSCode: Edit file 'CreateNewUser.php' di folder 'app/Actions/Fortify''
-
 49. Terminal: php artisan make:controller SwaggerController
 50. VSCode: Edit file 'SwaggerController.php' di folder 'app/Http/Controllers'
 51. Terminal: php artisan config:clear
 52. Terminal: php artisan cache:clear
 53. Terminal: php artisan view:clear
 54. Terminal: php artisan l5-swagger:generate
-
 
 MENGHAPUS CACHE
 php artisan optimize:clear
