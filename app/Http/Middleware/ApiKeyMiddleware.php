@@ -12,8 +12,10 @@ class ApiKeyMiddleware
     {
         $apiKey = $request->header('X-API-KEY');
         
-        if (!$apiKey || !ApiKey::where('key', $apiKey)->exists()) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (!$apiKey) {
+            return response()->json(['error' => 'Unauthorized: API Key tidak boleh kosong.'], 401);
+        } else if(!ApiKey::where('key', $apiKey)->exists()){
+            return response()->json(['error' => 'Unauthorized: Invalid API Key.'], 401);
         }
 
         return $next($request);

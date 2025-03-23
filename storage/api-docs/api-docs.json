@@ -27,20 +27,67 @@
                 "summary": "Saldo Merchant",
                 "description": "Mengambil Data Saldo Merchant",
                 "operationId": "saldo",
+                "parameters": [
+                    {
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "description": "API Key untuk autentikasi",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "Ok",
+                        "description": "Berhasil mengambil saldo",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "example": {
-                                    "success": true,
-                                    "message": "Berhasil mengambil Saldo Merchant",
-                                    "data": [
-                                        {
-                                            "saldo": "50000"
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Saldo merchant berhasil diambil."
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "user_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "saldo": {
+                                                    "type": "integer",
+                                                    "example": 1000000
+                                                }
+                                            },
+                                            "type": "object"
                                         }
-                                    ]
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized: API Key tidak valid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Unauthorized: Invalid API Key."
+                                        }
+                                    },
+                                    "type": "object"
                                 }
                             }
                         }
